@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -27,4 +28,12 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'VJ Azure subscription(c3e0dda8-281f-471c-abd1-50f84174ee22)'
+    appType: 'webApp'
+    WebAppName: 'vijayanappservice'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     
