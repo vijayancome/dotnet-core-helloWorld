@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <DebugType>portable</DebugType>
     <AssemblyName>dotnet-core-helloWorld</AssemblyName>
     <OutputType>Exe</OutputType>
