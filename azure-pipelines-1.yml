@@ -33,7 +33,7 @@ steps:
   inputs:
     SourceFolder: '$(Build.ArtifactStagingDirectory)'
     Contents: '**/zip'
-    TargetFolder: '$(System.DefaultWorkingDirectory)'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
