@@ -29,11 +29,17 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: '**/zip'
+    TargetFolder: '$(System.DefaultWorkingDirectory)'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'VJ Azure subscription(c3e0dda8-281f-471c-abd1-50f84174ee22)'
     appType: 'webApp'
     WebAppName: 'vijayanappservice'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '**/*.zip'
     
