@@ -38,3 +38,5 @@ steps:
     WebAppName: 'vijayanappservice'
     packageForLinux: '$(System.DefaultWorkingDirectory)**/*.zip'
     
+- task: PublishBuildArtifacts@1
+    
